@@ -16,119 +16,143 @@ st.markdown("""
 <style>
     /* Global Styles */
     .stApp {
-        background-color: #0d1117;
-        color: #c9d1d9;
+        background-color: #0b0f19;
+        color: #e2e8f0;
         font-family: 'Inter', sans-serif;
     }
 
     /* Headers */
-    h1, h2, h3 {
-        color: #58a6ff;
+    h1 {
+        background: linear-gradient(90.7deg, rgb(255, 253, 218) 1.9%, rgb(246, 186, 255) 39.5%, rgb(155, 226, 255) 75.6%, rgb(255, 253, 218) 100.2%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: 'Inter', sans-serif;
+        font-weight: 800;
+        letter-spacing: -1px;
+    }
+    
+    h2, h3 {
+        color: #e2e8f0;
         font-family: 'Inter', sans-serif;
         font-weight: 600;
     }
 
     /* Text */
     p {
-        color: #8b949e;
+        color: #94a3b8;
         font-size: 1.1rem;
     }
 
     /* Sidebar */
     .css-1d391kg {
-        background-color: #161b22;
-        border-right: 1px solid #30363d;
+        background-color: #111827;
+        border-right: 1px solid rgba(255,255,255,0.05);
     }
     
     .stSlider > div > div > div > div {
-        background-color: #238636 !important;
+        background: linear-gradient(90.7deg, rgb(246, 186, 255) 0%, rgb(155, 226, 255) 100%) !important;
     }
 
     .stNumberInput > div > div > input {
-        background-color: #21262d;
-        color: #c9d1d9;
-        border: 1px solid #30363d;
-        border-radius: 6px;
+        background-color: #1f2937;
+        color: #e2e8f0;
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 8px;
     }
 
     .stCheckbox > label > div[role="checkbox"] {
-        background-color: #21262d;
-        border: 1px solid #30363d;
+        background-color: #1f2937;
+        border: 1px solid rgba(255,255,255,0.1);
     }
 
     .stCheckbox > label > div[role="checkbox"][aria-checked="true"] {
-        background-color: #238636;
-        border: 1px solid #238636;
+        background-color: #8b5cf6;
+        border: 1px solid #8b5cf6;
     }
 
     /* Selectbox */
     .stSelectbox > div > div > div {
-        background-color: #21262d;
-        color: #c9d1d9;
-        border: 1px solid #30363d;
-        border-radius: 6px;
+        background-color: #1f2937;
+        color: #e2e8f0;
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 8px;
     }
 
     /* Buttons */
     .stButton > button {
-        background-color: #238636 !important;
-        color: #ffffff !important;
-        border: 1px solid rgba(240, 246, 252, 0.1) !important;
-        border-radius: 6px !important;
-        font-weight: 600 !important;
-        transition: all 0.2s ease-in-out !important;
-        padding: 0.5rem 1rem !important;
-    }
-
-    .stButton > button:hover {
-        background-color: #2ea043 !important;
-        border-color: rgba(240, 246, 252, 0.1) !important;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(46, 160, 67, 0.4);
-    }
-
-    /* Dataframe */
-    .stDataFrame {
-        border: 1px solid #30363d;
-        border-radius: 8px;
-        overflow: hidden;
-    }
-
-    /* Result Card */
-    .result-card {
-        padding: 2rem;
-        border-radius: 12px;
-        border: 1px solid #30363d;
-        background: linear-gradient(145deg, #161b22, #0d1117);
-        text-align: center;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-        animation: fadeIn 0.5s ease-out;
-    }
-
-    .result-card h3 {
-        color: #8b949e;
-        font-size: 1.2rem;
-        margin-bottom: 0.5rem;
+        background: linear-gradient(90.7deg, rgb(246, 186, 255) 1.9%, rgb(155, 226, 255) 100.2%) !important;
+        color: #1e293b !important;
+        border: none !important;
+        border-radius: 12px !important;
+        font-weight: 700 !important;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        padding: 0.75rem 1.5rem !important;
+        box-shadow: 0 4px 15px rgba(246, 186, 255, 0.3) !important;
         text-transform: uppercase;
         letter-spacing: 1px;
     }
 
+    .stButton > button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(246, 186, 255, 0.5) !important;
+        filter: brightness(1.1);
+    }
+
+    /* Dataframe */
+    .stDataFrame {
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    /* Result Card */
+    .result-card {
+        padding: 3rem;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        text-align: center;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        animation: scaleIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .result-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; height: 1px;
+        background: linear-gradient(90.7deg, transparent, rgb(246, 186, 255), rgb(155, 226, 255), transparent);
+    }
+
+    .result-card h3 {
+        color: #94a3b8;
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 500;
+    }
+
     .result-card h1 {
-        color: #58a6ff;
-        font-size: 3rem;
+        font-size: 4.5rem;
         margin: 0;
-        text-shadow: 0 0 20px rgba(88, 166, 255, 0.3);
+        text-shadow: 0 0 30px rgba(246, 186, 255, 0.2);
     }
 
     /* Animations */
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
+    @keyframes scaleIn {
+        from { opacity: 0; transform: scale(0.9) translateY(20px); }
+        to { opacity: 1; transform: scale(1) translateY(0); }
     }
 
     /* Dividers */
     hr {
-        border-color: #30363d;
+        border-color: rgba(255,255,255,0.05);
+        margin: 3rem 0;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -215,7 +239,7 @@ with col1:
     st.markdown("### 📊 Your Inputs")
     st.dataframe(
         pd.DataFrame([input_dict]).T.rename(columns={0: "Value"}),
-        use_container_width=True,
+        width='stretch',
         height=400
     )
 
