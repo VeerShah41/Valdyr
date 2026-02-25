@@ -1,5 +1,7 @@
-## 🚀 Live Application
+## Live Application
+
 🔗 https://housepredict112.streamlit.app/
+
 ---
 # 🏠 Intelligent Property Price Advisory System
 
